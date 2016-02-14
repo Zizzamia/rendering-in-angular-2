@@ -27,6 +27,190 @@
       </div>
     </section>
 
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>talk about rendering</h2>
+        <!-- Rendering it's what show up on the screen,
+        and we all used HTML5 and CSS that render.
+        But as far as I remember the goal was have one
+        application that render cross many platforms.
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>talk about challenges (HTML to native)</h2>
+        <!-- 
+        We can rendere an Angular app in a web view:
+        phonegapp, ionic.
+        Or we can render something natively that implement
+        native scriptm, react native.
+        The pros: it's html code
+        The cons: needs different template for any framework
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>Angular 2 can do a step forward</h2>
+        <!-- 
+        How?
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>does Angular 2 has any renderers</h2>
+        <div class="byline">
+          <div class="classy">
+            web (JS and Dart)
+          </div>
+        </div>
+        <div class="byline">
+          <div class="classy">
+            server
+          </div>
+        </div>
+        <!-- 
+        Angular 2 has build in multy rendering capabilities,
+        we already saw some of them on the web, by rendering
+        in ES5 and Dart.
+        The server renderer is used for server-side
+        pre-compilation and for the Angular2 compile build-step
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>why this is possible?</h2>
+        [image of the Worker and UI separation]
+        <!-- 
+        So now, how this renders works?
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>how Angular2 makes it work?</h2>
+        <!-- 
+        All non-DOM code is handled on the Core level
+        Then instructions to the UI level are sent
+        so that the application can be rendered.
+        This allows for a full separation between two
+        areas (ui and core) and allow us web worker support.
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>why are these two separate?</h2>
+        <div class="byline">
+          <div class="classy">
+            web worker support
+          </div>
+        </div>
+        <div class="byline">
+          <div class="classy">
+            custom renderer support
+          </div>
+        </div>
+        <!--
+        This separation allows to do also custom render
+        support.
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>Angular has a Renderer class</h2>
+        HTML and CSS code is parsed at compile time
+        <!--
+        The way Angular render it's base from
+        the Renderer class, where all the
+        HTML and CSS code is parsed at compile time.
+        So we can easy image the possibility to overide
+        some of the Rendere methods, and make our custom render.
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h4>This allows for full a understanding of the HTML code</h4>
+        <pre ng-non-bindable><code class="language-markup">&lt;p&gt;hello&lt;p&gt;
+     &lt;div *ngIf=“…”&gt;
+   </code></pre>
+    Turn into this:
+        <pre><code class="language-javascript">
+attachView(pElement);
+attachView(ngIfDivElement);</code></pre>
+        <!--
+        Angular parses and programmatically builds the HTML
+        tree via the renderer behind the scenes.
+        This means that we can make any renderer understand this.
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>Writing a custom renderer</h3>
+        <ul>
+          <li>extend Renderer Class</li>
+        </ul>
+      </div>
+      <!--
+      now all the inner HTML is inserted and understood
+      -->
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>can we experiment?</h2>
+        <h3>custom canvas experimentation (ReactCanvas)</h3>
+      </div>
+    </section>
+ 
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code example canvas</h3>
+        <pre ng-non-bindable><code class="language-javascript">
+</code></pre>
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>Multiple renderers per app</h3>
+        <ul>
+          <li>electron</li>
+          <li>native script</li>
+        </ul>
+      </div>
+      <!--
+      what about multiple renderers per app
+      - elctron: render the entire app in a webview on desktop
+      - native script: use a different template language to render a native mobile representation of the app
+      -->
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>Work in progress</h3>
+        <!--
+        These tools are still experimental.
+        But here are some examples of this in action
+        -->
+      </div>
+    </section>
+
     <section data-bespoke-state="full-title">
       <div class="content">
         <img src="img/plan.png" style="opacity:0.9">
@@ -35,292 +219,33 @@
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h2>Angular at Twitter</h2>
-        <img src="img/angularjs-logo.png" 
-        style="opacity:0.8;height:220px;display:inline-block;margin:0 20px;">
-        <img src="img/twitter_logo_blue.png" 
-        style="opacity:0.8;height:180px;display:inline-block;margin:0 20px;
-        vertical-align:14px;">
-      </div>
-    </section>
-
-    <section data-bespoke-state="full-text">
-      <div class="content">
-        <h2>#ngTasty</h2>
-        <div class="byline">
-          <div class="classy">
-            Is an open source collection of UI components used by my team
-          </div>
-        </div>
-        <a href="https://github.com/Zizzamia/ng-tasty" target="_blank">
-          <img src="img/ng-tasty-github.jpg" style="width:800px" />
-        </a>
-      </div>
-    </section>
-
-    <section data-bespoke-state="full-text">
-      <div class="content">
-        <h2>There were a few problems</h2>
-        <div class="byline">
-          <div class="classy">
-            No shared components available
-          </div>
-        </div>
-        <div class="byline">
-          <div class="classy">
-            No shared architecture
-          </div>
-        </div>
-        <div class="byline">
-          <div class="classy">
-            No communication between teams
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section data-bespoke-state="full-text">
-      <div class="content">
-        <h2>#ngTasty should be</h2>
-        <div class="byline">
-          <div class="classy">
-            easy to reuse
-          </div>
-        </div>
-        <div class="byline">
-          <div class="classy">
-            easy to test
-          </div>
-        </div>
-        <div class="byline">
-          <div class="classy">
-            easy to benchmark
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section data-bespoke-state="full-text">
-      <div class="content">
-        <h2>Benchpress</h2>
-      </div>
-    </section>
-
-    <section data-bespoke-state="full-text">
-      <div class="content">
-        <div class="byline">
-          <div class="classy">
-            How easy is it to benchmark a directive ?
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section data-bespoke-state="full-title">
-      <div class="content">
-        <div class="byline">
-          <div class="classy">
-            There is some
-          </div>
-        </div>
-        <h2>repeated manual work</h2>
-        <div class="byline">
-          <div class="classy">
-            to do
-          </div>
-        </div>
-        <h2>to create a benchmark</h2>
-        <div class="unbrokenline"></div>
-      </div>
-    </section>
-
-    <section data-bespoke-state="code">
-      <div class="content">
-        <h3>How to create a benchmark</h3>
-        <p style="text-align:left">Enter this</p>
-        <pre ng-non-bindable><code class="language-javascript">npm install generator-benchpress
-
-yo benchpress ng-tasty
-</code></pre>
-        <p style="text-align:left">You get this</p>
-        <pre ng-non-bindable><code class="language-javascript">create benchmarks/protractor.conf.js
-create benchmarks/ng-tasty/index.html
-create benchmarks/ng-tasty/benchmark.spec.js</code></pre>
-      </div>
-    </section>
-
-    <section data-bespoke-state="code">
-      <div class="content">
-        <h3>Prepare a benchmark on the dist</h3>
-        <p style="text-align:left">To see the case we are testing we can run</p>
-        <pre ng-non-bindable><code class="language-javascript">http-server -p 8000</code></pre>
-        <br />
-        <p style="text-align:left">And visit</p>
-        <pre ng-non-bindable><code class="language-javascript">http://localhost:8000/benchmarks/ng-tasty/</code></pre>
-      </div>
-    </section>
-
-    <section data-bespoke-state="code">
-      <div class="content">
-        <h2>Running a basic benchmark</h2>
-        <pre ng-non-bindable><code class="language-javascript">protractor benchmarks/protractor.conf.js --specs benchmarks/ng-tasty/benchmark.spec.js
-</code></pre>
-      </div>
-    </section>
-
-    <section data-bespoke-state="code">
-      <div class="content">
-        <h4>ngTasty Simple Table</h4>
-        <pre ng-non-bindable><code class="language-markup">&lt;div tasty-table bind-resource=&quot;resource&quot; watch-resource=&quot;collection&quot;&gt;
-  &lt;table class=&quot;table table-striped table-condensed&quot;&gt;
-    &lt;thead tasty-thead&gt;&lt;/thead&gt;
-    &lt;tbody&gt;
-      &lt;tr ng-repeat=&quot;row in rows&quot;&gt;
-        &lt;td&gt;&lbrace;&lbrace; row.name &rbrace;&rbrace;&lt;/td&gt;
-        &lt;td&gt;&lbrace;&lbrace; row.star &rbrace;&rbrace;&lt;/td&gt;
-        &lt;td&gt;&lbrace;&lbrace; row['sf-Location'] &rbrace;&rbrace;&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-  &lt;div tasty-pagination>&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-        <pre><code class="language-javascript">$scope.resource = {
-  "header": [
-    { "name": "Name" },
-    { "star": "Star" },
-    { "sf-Location": "SF Location" }
-  ],
-  "rows": [
-    { "name": "Ritual Coffee Roasters", "star": "★★★★★", "sf-location": "Hayes Valley"}, ...
-  ]
-};</code></pre>
-      </div>
-    </section>
-
-    <section data-bespoke-state="code">
-      <div class="content">
-        <h4>ngTasty Simple Table</h4>
-        <pre ng-non-bindable><code class="language-markup">&lt;div tasty-table bind-resource=&quot;resource&quot;&gt; ... &lt;/div&gt;</code></pre>
-        <pre ng-non-bindable><code class="language-markup">&lt;div tasty-table bind-resource=&quot;resource&quot; watch-resource=&quot;collection&quot;&gt; ... &lt;/div&gt;</code></pre>
-        <pre ng-non-bindable><code class="language-markup">&lt;div tasty-table bind-resource=&quot;resource&quot; watch-resource=&quot;equality&quot;&gt; ... &lt;/div&gt;</code></pre>
-      </div>
-    </section>
-
-    <section data-bespoke-state="code">
-      <div class="content">
-        <h3>Running a benchmark on the dist</h3>
-        <pre ng-non-bindable><code class="language-javascript">protractor benchmarks/protractor.conf.js --specs benchmarks/dist/benchmark.spec.js
-</code></pre>
-      </div>
-    </section>
-
-    <section data-bespoke-state="code">
-      <div class="content">
-        <h4>Running Benchpress on an ngTasty large table</h4>
-        <br />
-        <p style="font-size:18px;text-align:left;padding-left:8px">watch-resource="reference"</p>
-        <pre ng-non-bindable><code class="language-markup bigger">      gcAmount | gcAmountInScript |       render |        script
-============== | ================ | ============ | =============
-        423.69 |             0.00 |        11.56 |          9.45</code></pre>
-
-        <br />
-        <p style="font-size:18px;text-align:left;padding-left:8px">watch-resource="collection"</p>
-        <pre ng-non-bindable><code class="language-markup bigger">        665.45 |             0.00 |        18.11 |         12.31</code></pre>
-        
-        <br />
-        <p style="font-size:18px;text-align:left;padding-left:8px">watch-resource="equality"</p>
-        <pre ng-non-bindable><code class="language-markup bigger">      51433.72 |        108760.91 |        10.73 |        168.06</code></pre>
-      </div>
-    </section>
-
-    <section data-bespoke-state="full-text">
-      <div class="content">
-        <h3>Comparing project versions</h3>
-        <h4>ngTasty</h4>
+        <h3>show plan</h3>
         <ul>
-          <li>v0.5.1 (Master)</li>
-          <li>v0.5.0 (January 31th)</li>
-          <li>v0.4.0 (December 8th)</li>
-          <li>v0.3.0 (October 22th)</li>
+          <li>render in web</li>
+          <li>render in electron</li>
         </ul>
       </div>
     </section>
 
-    <section data-bespoke-state="code">
+    <section data-bespoke-state="full-text">
       <div class="content">
-        <h3>Creating a benchmark for specific bower versions</h3>
-        <br />
-        <pre ng-non-bindable><code class="language-javascript">yo benchpress:external dist ng-tasty#0.4.0
-</code></pre>
-        <br />
-        <pre ng-non-bindable><code class="language-javascript">protractor benchmarks/protractor.conf.js --specs benchmarks/ng-tasty-0-4-0/benchmark.spec.js</code></pre>
-      </div>
-    </section>
-
-    <section data-bespoke-state="code">
-      <div class="content">
-        <h4>Running Benchpress on an ngTasty large table</h4>
-
-        <h5 style="font-size:18px;text-align:left;margin-bottom:0">ng-tasty 0.5.1 (master)</h5>
-        <pre ng-non-bindable><code class="language-markup bigger">      gcAmount | gcAmountInScript |       render |        script
-============== | ================ | ============ | =============
-      51503.28 |             0.00 |        11.08 |        172.02</code></pre>
-        
-        <h5 style="font-size:18px;text-align:left;margin-bottom:0">ng-tasty 0.5.0</h5>
-        <pre ng-non-bindable><code class="language-markup bigger">      29358.08 |         38678.04 |        11.37 |        108.99</code></pre>
-
-        <h5 style="font-size:18px;text-align:left;margin-bottom:0">ng-tasty 0.4.0</h5>
-        <pre ng-non-bindable><code class="language-markup bigger">      32047.94 |         47624.71 |        10.89 |        121.68</code></pre>
-
-        <h5 style="font-size:18px;text-align:left;margin-bottom:0">ng-tasty 0.3.0</h5>
-        <pre ng-non-bindable><code class="language-markup bigger">      42849.36 |         79090.07 |         9.98 |        154.23</code></pre>
-      </div>
-    </section>
-
-    <section data-bespoke-state="code">
-      <div class="content">
-        <h3><code>ui-grid</code> vs <code>ng-table</code> vs <code>ng-tasty</code></h3>
-        <pre ng-non-bindable><code class="language-javascript">yo benchpress:external angular-ui-grid
-
-yo benchpress:external ng-table
-
-yo benchpress:external ng-tasty
-</code></pre>
-        <pre ng-non-bindable><code class="language-javascript">protractor benchmarks/protractor.conf.js --specs benchmarks/angular-ui-grid/benchmark.spec.js
-
-protractor benchmarks/protractor.conf.js --specs benchmarks/ng-table/benchmark.spec.js
-
-protractor benchmarks/protractor.conf.js --specs benchmarks/ng-tasty-0-5-0/benchmark.spec.js
-</code></pre>
-      </div>
-    </section>
-
-    <section data-bespoke-state="code">
-      <div class="content">
-        <h4>Running Benchpress on a large table</h4>
-        
-        <h5 style="font-size:18px;text-align:left;margin-bottom:0">angular-ui-grid (v3.0.0-rc.20)</h5>
-        <pre ng-non-bindable><code class="language-markup bigger">      gcAmount | gcAmountInScript |       render |        script
-============== | ================ | ============ | =============
-       4720.29 |          4720.29 |        18.17 |         59.98</code></pre>
-        
-        <br />
-        <h5 style="font-size:18px;text-align:left;margin-bottom:0">ng-table (v0.5.3)</h5>
-        <pre ng-non-bindable><code class="language-markup bigger">      10280.07 |          8845.68 |         9.51 |         41.47</code></pre>
-
-        <br />
-        <h5 style="font-size:18px;text-align:left;margin-bottom:0">ng-tasty (v0.5.0)</h5>
-        <pre ng-non-bindable><code class="language-markup bigger">        753.51 |             0.00 |        10.16 |          9.32</code></pre>
+        <h3>render a basic version in react native</h3>
       </div>
     </section>
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h3>To recap</h3>
+        <h3>the API for rendering is constantly changing</h3>
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>Recap</h3>
         <ul>
-          <li>1) compare api implementation</li>
-          <li>2) compare versions</li>
-          <li>3) compare third party solutions</li>
+          <li>the end goal is to have plug/play for support for angular2 renderers</li>
+          <li>read this article to learn more … yearofmoo</li>
+          <li>use this github project to get started to … https://github.com/matsko/angular2-multi-client</li>
         </ul>
       </div>
     </section>
