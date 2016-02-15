@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html ng-app="talkApp">
+<head>
+  <meta charset="utf-8">
+  <title>Rendering in Angular 2</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/prism.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body ng-controller="TalkCtrl">
+  <article>
+    <section data-bespoke-state="bighero">
+      <div class="content">
+        <h2>Rendering in Angular 2</h2>
+        <div class="byline">
+          <div class="classy">
+            by Leonardo Zizzamia
+          </div>
+        </div>
+        <div class="profile">
+          <div class="rounded-image">
+            <img src="img/leo.jpg">
+          </div>
+          <h3>@zizzamia</h3>
+        </div>
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>What is it rendering</h2>
+        <!-- Rendering it's what show up on the screen,
+        and we all used HTML5 and CSS that render.
+        But as far as I remember the goal was have one
+        application that render cross many platforms.
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>HTML to native</h2>
+        <!-- Challenges
+        We can render an Angular app in a web view:
+        phonegapp, ionic.
+        Or we can render something natively that implement
+        native script, react native.
+        The pros: it's html code
+        The cons: needs different template for any framework
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>Angular 2 can do a step forward</h2>
+        <!-- 
+        How?
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>Angular 2 renderers</h2>
+        <div class="byline">
+          <div class="classy">
+            web (JS and Dart)
+          </div>
+        </div>
+        <div class="byline">
+          <div class="classy">
+            server
+          </div>
+        </div>
+        <!-- 
+        Angular 2 has build in multy rendering capabilities,
+        we already saw some of them on the web, by rendering
+        in ES5 and Dart.
+        The server renderer is used for server-side
+        pre-compilation and for the Angular2 compile build-step
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>Why this is possible?</h2>
+        [image of the Worker and UI separation]
+        <!-- 
+        So now, how this renders works?
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>how Angular2 makes it work?</h2>
+        <!-- 
+        All non-DOM code is handled on the Core level
+        Then instructions to the UI level are sent
+        so that the application can be rendered.
+        This allows for a full separation between two
+        areas (ui and core) and allow us web worker support.
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>why are these two separate?</h2>
+        <div class="byline">
+          <div class="classy">
+            web worker support
+          </div>
+        </div>
+        <div class="byline">
+          <div class="classy">
+            custom renderer support
+          </div>
+        </div>
+        <!--
+        This separation allows to do also custom render
+        support.
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>Angular has a Renderer class</h2>
+        HTML and CSS code is parsed at compile time
+        <!--
+        The way Angular render it's base from
+        the Renderer class, where all the
+        HTML and CSS code is parsed at compile time.
+        So we can easy image the possibility to overide
+        some of the Rendere methods, and make our custom render.
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h4>This allows for full a understanding of the HTML code</h4>
+        <pre ng-non-bindable><code class="language-markup">&lt;p&gt;hello&lt;p&gt;
+     &lt;div *ngIf=“…”&gt;
+   </code></pre>
+    Turn into this:
+        <pre><code class="language-javascript">
+attachView(pElement);
+attachView(ngIfDivElement);</code></pre>
+        <!--
+        Angular parses and programmatically builds the HTML
+        tree via the renderer behind the scenes.
+        This means that we can make any renderer understand this.
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>Writing a custom renderer</h3>
+        <ul>
+          <li>extend Renderer Class</li>
+        </ul>
+        [image of some of the methods exsist to the Render class]
+      </div>
+      <!--
+      now all the inner HTML is inserted and understood
+      -->
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>Let's experiment!</h2>
+        <h3>Custom canvas experimentation (ReactCanvas)</h3>
+      </div>
+    </section>
+ 
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code example canvas</h3>
+        <pre ng-non-bindable><code class="language-javascript">
+</code></pre>
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>Multiple renderers per app</h3>
+        <ul>
+          <li>electron</li>
+          <li>native script</li>
+        </ul>
+      </div>
+      <!--
+      what about multiple renderers per app
+      - elctron: render the entire app in a webview on desktop
+      - native script: use a different template language to render a native mobile representation of the app
+      -->
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>Work in progress</h3>
+        <!--
+        These tools are still experimental.
+        But here are some examples of this in action
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-title">
+      <div class="content">
+        <img src="img/plan.png" style="opacity:0.9">
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>show plan</h3>
+        <ul>
+          <li>render in web</li>
+          <li>render in electron</li>
+        </ul>
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>render a basic version in react native</h3>
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>the API for rendering is constantly changing</h3>
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>Recap</h3>
+        <ul>
+          <li>the end goal is to have plug/play for support for angular2 renderers</li>
+          <li>read this article to learn more … yearofmoo</li>
+          <li>use this github project to get started to … https://github.com/matsko/angular2-multi-client</li>
+        </ul>
+      </div>
+    </section>
+    
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>#ThankYou</h3>
+        <div class="byline">
+          <div class="classy">
+            grazie!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-bespoke-state="final">
+      <div class="content">
+        <div class="byline">
+          <div class="classy">
+            This has been
+          </div>
+        </div>
+        <h2>Rendering in Angular 2</h2>
+        <div class="byline">
+          <div class="classy">
+            by Leonardo Zizzamia
+          </div>
+        </div>
+        <div class="profile">
+          <div class="rounded-image">
+            <img src="img/leo.jpg">
+          </div>
+          <h3>@zizzamia</h3>
+        </div>
+      </div>
+    </section>
+
+  </article>
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: { families: [ 'Tauri::latin', 'Alegreya:400italic:latin' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+  <script src="js/bespoke.js"></script>
+  <script src="js/prism.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/deck.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/app.xss.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/ng-tasty/ng-tasty-tpls.js"></script>
+  <script>
+    angular.module('talkApp', [])
+    .config(function ($compileProvider) {
+      $compileProvider.debugInfoEnabled(false);
+    })
+    .controller('TalkCtrl', function ($scope) {
+      $scope.talk = {
+        demoTime: 'Demo time'
+      }
+    })
+  </script>
+</body>
+</html>
