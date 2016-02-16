@@ -78,26 +78,18 @@
         Angular 2 has build in multy rendering capabilities,
         we already saw some of them on the web, by rendering
         in ES5 and Dart.
-        The server renderer is used for server-side
-        pre-compilation and for the Angular2 compile build-step
+        The server renderer is used for server-side pre-compilation, 
+        and for the Angular2 compile build-step.
         -->
       </div>
     </section>
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h2>Why this is possible?</h2>
-        [image of the Worker and UI separation]
+        <h2>How this renders works</h2>
+        <img src="./assets/dom-render-diagram.png" />
         <!-- 
         So now, how this renders works?
-        -->
-      </div>
-    </section>
-
-    <section data-bespoke-state="full-text">
-      <div class="content">
-        <h2>how Angular2 makes it work?</h2>
-        <!-- 
         All non-DOM code is handled on the Core level
         Then instructions to the UI level are sent
         so that the application can be rendered.
@@ -109,15 +101,15 @@
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h2>why are these two separate?</h2>
+        <h2>Separation = support for ...</h2>
         <div class="byline">
           <div class="classy">
-            web worker support
+            web workers
           </div>
         </div>
         <div class="byline">
           <div class="classy">
-            custom renderer support
+            custom renderers
           </div>
         </div>
         <!--
@@ -130,20 +122,21 @@
     <section data-bespoke-state="full-text">
       <div class="content">
         <h2>Angular has a Renderer class</h2>
-        HTML and CSS code is parsed at compile time
+        <h3>HTML and CSS code is parsed at compile time</h3>
         <!--
-        The way Angular render it's base from
-        the Renderer class, where all the
-        HTML and CSS code is parsed at compile time.
+        From workers we got all the 
+        HTML and CSS code parsed at compile time (core level).
+        The way Angular renders this instructions it's base from
+        the Renderer class.
         So we can easy image the possibility to overide
-        some of the Rendere methods, and make our custom render.
+        some of the Render methods, and make our custom render.
         -->
       </div>
     </section>
 
     <section data-bespoke-state="code">
       <div class="content">
-        <h4>This allows for full a understanding of the HTML code</h4>
+        <h3>This allows for full a understanding of the HTML code</h3>
         <pre ng-non-bindable><code class="language-markup">&lt;p&gt;hello&lt;p&gt;
      &lt;div *ngIf=“…”&gt;
    </code></pre>
