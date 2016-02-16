@@ -122,7 +122,6 @@
     <section data-bespoke-state="full-text">
       <div class="content">
         <h2>Angular has a Renderer class</h2>
-        <h3>HTML and CSS code is parsed at compile time</h3>
         <!--
         From workers we got all the 
         HTML and CSS code parsed at compile time (core level).
@@ -136,14 +135,15 @@
 
     <section data-bespoke-state="code">
       <div class="content">
+        <h3>HTML and CSS code is parsed at compile time</h3>
+        <img src="./assets/html-code.png" style="width:90%; margin:0 auto;" />
+      </div>
+    </section>
+
+    <section data-bespoke-state="code">
+      <div class="content">
         <h3>This allows for full a understanding of the HTML code</h3>
-        <pre ng-non-bindable><code class="language-markup">&lt;p&gt;hello&lt;p&gt;
-     &lt;div *ngIf=“…”&gt;
-   </code></pre>
-    Turn into this:
-        <pre><code class="language-javascript">
-attachView(pElement);
-attachView(ngIfDivElement);</code></pre>
+        <img src="./assets/instruction-code.png" style="width:90%; margin:0 auto;" />
         <!--
         Angular parses and programmatically builds the HTML
         tree via the renderer behind the scenes.
@@ -155,10 +155,7 @@ attachView(ngIfDivElement);</code></pre>
     <section data-bespoke-state="full-text">
       <div class="content">
         <h3>Writing a custom renderer</h3>
-        <ul>
-          <li>extend Renderer Class</li>
-        </ul>
-        [image of some of the methods exsist to the Render class]
+        <img src="./assets/renderer-code.png" style="width:90%; margin:0 auto;"/>
       </div>
       <!--
       now all the inner HTML is inserted and understood
