@@ -75,11 +75,15 @@
           </div>
         </div>
         <!-- 
-        Angular 2 has build in multy rendering capabilities,
-        we already saw some of them on the web, by rendering
-        in ES5 and Dart.
-        The server renderer is used for server-side pre-compilation, 
+        Angular 2 has build in multi-rendering capabilities,
+        we have already seen Angular render an app in web by operating
+        for js and dart platforms.
+        Also the server renderer is used for server-side pre-compilation, 
         and for the Angular2 compile build-step.
+        (the pre compilation it's the same thing of build-step with one
+        single app file)
+        (the build step is the step would compile the ng2 app ahead of time,
+        so that the application size it's smaller and load faster)
         -->
       </div>
     </section>
@@ -179,7 +183,7 @@
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h3>Multiple renderers per app</h3>
+        <h2>Multiple renderers per app</h2>
         <ul>
           <li>electron</li>
           <li>native script</li>
@@ -188,13 +192,20 @@
       <!--
       what about multiple renderers per app
       - elctron: render the entire app in a webview on desktop
-      - native script: use a different template language to render a native mobile representation of the app
+      - native script: use a different template language to render a 
+                       native mobile representation of the app
+
+                       Notice how for NativeScript we still have different
+                       template code for the application for now. Since Angular2
+                       parses and understands HTML code this means that we can
+                       theoretically transform our web HTML code into NativeScript
+                       template code via the renderer.
       -->
     </section>
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h3>Work in progress</h3>
+        <h2>Work in progress</h2>
         <!--
         These tools are still experimental.
         But here are some examples of this in action
@@ -211,22 +222,14 @@
     <section data-bespoke-state="full-text">
       <div class="content">
         <h3>show plan</h3>
-        <ul>
-          <li>render in web</li>
-          <li>render in electron</li>
-        </ul>
-      </div>
-    </section>
-
-    <section data-bespoke-state="full-text">
-      <div class="content">
-        <h3>render a basic version in react native</h3>
-      </div>
-    </section>
-
-    <section data-bespoke-state="full-text">
-      <div class="content">
-        <h3>the API for rendering is constantly changing</h3>
+        <!--
+        This is plan. (show demo / show features).
+        Right now it is developed in Angular 1.x with ngUpgrade
+        Now we're migrating to Angular 2.0
+        Once things are more stable we intend to make it available
+        on web, desktop and mobile. Angular2 renderers will help
+        us make this happen.
+        -->
       </div>
     </section>
 
