@@ -32,6 +32,7 @@
         <h2>What is it rendering</h2>
         <!-- Rendering it's what show up on the screen,
         and we all used HTML5 and CSS that render.
+
         But as far as I remember the goal was have one
         application that render cross many platforms.
         -->
@@ -41,29 +42,71 @@
     <section data-bespoke-state="full-text">
       <div class="content">
         <h2>HTML to native</h2>
+        <div class="byline">
+          <div class="classy">
+            web view
+          </div>
+        </div>
+        <div class="byline">
+          <div class="classy">
+            natively
+          </div>
+        </div>
         <!-- Challenges
         We can render an Angular app in a web view:
-        phonegapp, ionic.
+        phonegapp and ionic.
+
         Or we can render something natively that implement
         native script, react native.
-        The pros: it's html code
-        The cons: needs different template for any framework
         -->
       </div>
     </section>
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h2>Angular 2 can do a step forward</h2>
+        <h2>HTML to native "pros and cons"</h2>
+        <div class="byline">
+          <div class="classy">
+            It's html code
+          </div>
+        </div>
+        <div class="byline">
+          <div class="classy">
+            Needs different  <br /> 
+            template for any framework
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>
+          Angular 2 <br />
+          can do a step forward
+        </h2>
+        <p>One template implementation for all platforms?</p>
         <!-- 
         How?
+        [gif about step forward]
         -->
       </div>
     </section>
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h2>Angular 2 renderers</h2>
+        <h2>Angular 2 Renderers</h2>
+        <!-- 
+        Angular 2 has build in multi-rendering capabilities.
+
+        [gif about someone painting]
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>Angular 2 Renderers</h2>
         <div class="byline">
           <div class="classy">
             web (JS and Dart)
@@ -74,16 +117,18 @@
             server
           </div>
         </div>
-        <!-- 
-        Angular 2 has build in multi-rendering capabilities,
-        we have already seen Angular render an app in web by operating
+        <!--
+        We have already seen Angular render an app in web by operating
         for js and dart platforms.
+
         Also the server renderer is used for server-side pre-compilation, 
         and for the Angular2 compile build-step.
-        (the pre compilation it's the same thing of build-step with one
-        single app file)
+        
         (the build step is the step would compile the ng2 app ahead of time,
         so that the application size it's smaller and load faster)
+
+        (the pre compilation it's the same thing of build-step with one
+        single app file)
         -->
       </div>
     </section>
@@ -94,9 +139,11 @@
         <img src="./assets/dom-render-diagram.png" />
         <!-- 
         So now, how this renders works?
-        All non-DOM code is handled on the Core level
-        Then instructions to the UI level are sent
+
+        All non-DOM code is handled on the Core level,
+        then instructions to the UI level are sent,
         so that the application can be rendered.
+
         This allows for a full separation between two
         areas (ui and core) and allow us web worker support.
         -->
@@ -125,12 +172,14 @@
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h2>Angular has a Renderer class</h2>
+        <h2>Angular 2 has a Renderer class</h2>
         <!--
         From workers we got all the 
         HTML and CSS code parsed at compile time (core level).
+
         The way Angular renders this instructions it's base from
         the Renderer class.
+
         So we can easy image the possibility to overide
         some of the Render methods, and make our custom render.
         -->
@@ -153,6 +202,7 @@
         <!--
         Angular parses and programmatically builds the HTML
         tree via the renderer behind the scenes.
+
         This means that we can make any renderer understand this.
         -->
       </div>
@@ -165,7 +215,7 @@
         style="width:90%; margin:0 auto;"/>
       </div>
       <!--
-      now all the inner HTML is inserted and understood
+      Now all the inner HTML is inserted and understood
       -->
     </section>
 
@@ -173,6 +223,9 @@
       <div class="content">
         <h2>Let's experiment!</h2>
         <h3>Custom canvas experimentation (ReactCanvas)</h3>
+        <!--
+        [gif about experimentation, maybe a science explode a flask]
+        -->
       </div>
     </section>
  
@@ -193,17 +246,37 @@
         </ul>
       </div>
       <!--
-      what about multiple renderers per app
-      - elctron: render the entire app in a webview on desktop
-      - native script: use a different template language to render a 
+      What about multiple renderers per app,
+      now let's see two demo of two amazing tools like:
+      elctron and native script with Angular 2.
+      -->
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>Electron</h2>
+        <!--
+        elctron: render the entire app in a webview on desktop
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>Native script</h2>
+        <!--
+        native script: use a different template language to render a 
                        native mobile representation of the app
 
                        Notice how for NativeScript we still have different
-                       template code for the application for now. Since Angular2
-                       parses and understands HTML code this means that we can
-                       theoretically transform our web HTML code into NativeScript
+                       template code for the application for now. 
+
+                       Since Angular2 parses and understands HTML code 
+                       this means that we can theoretically transform 
+                       our web HTML code into NativeScript
                        template code via the renderer.
-      -->
+        -->
+      </div>
     </section>
 
     <section data-bespoke-state="full-text">
@@ -222,7 +295,19 @@
         <img src="img/plan-agenda-view.png" 
         style="width:90%; margin:0 auto;">
         <!--
-        Plan reimagines the approach to managing your day for the digital age. It brings together everything that takes time in your day: tasks, meetings, reminders, and notes, and intelligently organizes them so that you can spend time on what matters most: actually doing what you love. Your tasks are connected to your calendar (you know, the place that stores what you are doing that day), which are both connected by your ‘Focus’ (projects, classes, categories, etc). Suddenly, you can see everything you want to do and everything you’re doing in one place, effortlessly organized, with meaningful insights that tell you exactly how you’re spending your time.
+        This is plan. (show demo / show features).
+
+        Right now it is developed in Angular 1.x with ngUpgrade
+        Now we're migrating to Angular 2.0
+        Once things are more stable we intend to make it available
+        on web, desktop and mobile. Angular2 renderers will help
+        us make this happen.
+
+        A little bit what Plan is...
+        Plan is a bridge between your to-dos, meetings, projects, and work, 
+        it’s tough to keep track of everything easily. 
+        
+        It brings together everything that takes time in your day, and intelligently organizes them so that you can spend time on what matters most: actually doing what you love.
         -->
       </div>
     </section>
@@ -233,12 +318,7 @@
         <img src="img/plan-agenda-view.png" 
         style="width:90%; margin:0 auto;">
         <!--
-        This is plan. (show demo / show features).
-        Right now it is developed in Angular 1.x with ngUpgrade
-        Now we're migrating to Angular 2.0
-        Once things are more stable we intend to make it available
-        on web, desktop and mobile. Angular2 renderers will help
-        us make this happen.
+         Your tasks are connected to your calendar (you know, the place that stores what you are doing that day), which are both connected by your ‘Focus’ (projects, classes, categories, etc). Suddenly, you can see everything you want to do and everything you’re doing in one place, effortlessly organized, with meaningful insights that tell you exactly how you’re spending your time.
         -->
       </div>
     </section>
@@ -260,7 +340,7 @@
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h3>Special thanks to </h3>
+        <h3>Special thanks to</h3>
         <ul>
           <li>Matias @yearofmoo</li>
         </ul>
