@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/prism.css">
   <link rel="stylesheet" href="css/custom.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <style>
+    .name { color:#776045; font-weight:bold; font-family:"Open Sans"; }
+    article {
+      border-top:5px solid maroon;
+      box-shadow:inset 0 0 200px #555;
+    }
+  </style>
 </head>
 <body ng-controller="TalkCtrl">
   <article>
@@ -196,7 +204,7 @@
 
     <section data-bespoke-state="code">
       <div class="content">
-        <h3>code example githuib</h3>
+        <h3>code example github</h3>
         <h4><a target="_blank" rel="nofollow" href="https://github.com/matsko/angular2-canvas-renderer-expirement">matsko/angular2-canvas-renderer-expirement</a></h4>
       <a href="https://github.com/matsko/angular2-canvas-renderer-expirement" target="_blank" rel="nofollow">
         <img src="./assets/canvas-github.png" style="display:block; width:90%; opacity:0.9">
@@ -207,10 +215,20 @@
     <section data-bespoke-state="full-text">
       <div class="content">
         <h2>Multiple renderers per app</h2>
-        <ul>
-          <li>electron</li>
-          <li>native script</li>
-        </ul>
+
+        <div style="text-align:left">
+          <h4>Let's talk about</h4>
+          <ul>
+            <li>electron</li>
+            <li>web</li>
+          </ul>
+
+          <h4 style="margin-top:1em">Later on we can do...</h4>
+          <ul>
+            <li>other web view renderers (ionic)</li>
+            <li>native renderers (nativescript)</li>
+          </ul>
+        </div>
       </div>
       <!--
       what about multiple renderers per app
@@ -226,9 +244,56 @@
       -->
     </section>
 
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code example electron</h3>
+      <a href="https://github.com/matsko/angular2-multi-client" target="_blank" rel="nofollow">
+        <img src="./assets/app-electron.png" style="display:block; width:90%; opacity:0.9">
+      </a>
+      </div>
+    </section>
+
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code desktop</h3>
+        <img src="./assets/app-desktop-code.png" style="display:block; width:90%; opacity:0.9">
+      </div>
+    </section>
+
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code example web</h3>
+      <a href="https://github.com/matsko/angular2-multi-client" target="_blank" rel="nofollow">
+        <img src="./assets/app-chrome.png" style="display:block; width:90%; opacity:0.9">
+      </a>
+      </div>
+    </section>
+
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code web</h3>
+        <img src="./assets/app-web-code.png" style="display:block; width:90%; opacity:0.9">
+      </div>
+    </section>
+
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code example github</h3>
+        <h4><a target="_blank" rel="nofollow" href="https://github.com/matsko/angular2-multi-client">angular2-multi-client</a></h4>
+      <a href="https://github.com/matsko/angular2-multi-client" target="_blank" rel="nofollow">
+        <img src="./assets/app-github.png" style="display:block; width:90%; opacity:0.9">
+      </a>
+      </div>
+    </section>
+
     <section data-bespoke-state="full-text">
       <div class="content">
         <h2>Work in progress</h2>
+        <div class="byline">
+          <div class="classy">
+            Angular2 Rendering is still in beta
+          </div>
+        </div>
         <!--
         These tools are still experimental.
         But here are some examples of this in action
@@ -244,25 +309,38 @@
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h3>show plan</h3>
-        <!--
-        This is plan. (show demo / show features).
-        Right now it is developed in Angular 1.x with ngUpgrade
-        Now we're migrating to Angular 2.0
-        Once things are more stable we intend to make it available
-        on web, desktop and mobile. Angular2 renderers will help
-        us make this happen.
-        -->
+        <h3>Recap</h3>
+        <p>
+          Angular2 will include a more concrete API when stable is released.
+        </p>
+        <p>
+          More information will be provided when ready
+        </p>
+        <p>
+          Read Matias' Article at <strong>LINK</strong>
+        </p>
       </div>
     </section>
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h3>Recap</h3>
+        <h3>Links</h3>
+        <h4>Canvas Renderer Code</h4>
+        <a target="_blank" rel="nofollow" href="https://github.com/matsko/angular2-multi-client">angular2-multi-client</a>
+
+        <h4 style="margin-top:1em;">Angular Electron Demo Code</h4>
+        <a target="_blank" rel="nofollow" href="https://github.com/matsko/angular2-canvas-renderer-expirement">matsko/angular2-canvas-renderer-expirement</a>
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>Special Thank Yous</h3>
         <ul>
-          <li>the end goal is to have plug/play for support for angular2 renderers</li>
-          <li>read this article to learn more … yearofmoo</li>
-          <li>use this github project to get started to … https://github.com/matsko/angular2-multi-client</li>
+          <li><span class="name">Matias (@yearofmoo)</span> - slides, code, content</li>
+          <li><span class="name">Tobias Bosch</span> - he wrote the renderer</li>
+          <li><span class="name">Rob Wormald (@robwormald)</span> - angular electorn renderer</li>
+          <li><span class="name">The Rest of the Angular Core Team</li>
         </ul>
       </div>
     </section>
