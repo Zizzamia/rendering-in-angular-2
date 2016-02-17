@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/prism.css">
   <link rel="stylesheet" href="css/custom.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <style>
+    .name { 
+      color:#776045; 
+      font-weight:bold; 
+      font-family: "Open Sans"; 
+    }
+  </style>
 </head>
 <body ng-controller="TalkCtrl">
   <article>
@@ -32,6 +40,7 @@
         <h2>What is it rendering</h2>
         <!-- Rendering it's what show up on the screen,
         and we all used HTML5 and CSS that render.
+
         But as far as I remember the goal was have one
         application that render cross many platforms.
         -->
@@ -41,29 +50,71 @@
     <section data-bespoke-state="full-text">
       <div class="content">
         <h2>HTML to native</h2>
+        <div class="byline">
+          <div class="classy">
+            web view
+          </div>
+        </div>
+        <div class="byline">
+          <div class="classy">
+            natively
+          </div>
+        </div>
         <!-- Challenges
         We can render an Angular app in a web view:
-        phonegapp, ionic.
+        phonegapp and ionic.
+
         Or we can render something natively that implement
         native script, react native.
-        The pros: it's html code
-        The cons: needs different template for any framework
         -->
       </div>
     </section>
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h2>Angular 2 can do a step forward</h2>
+        <h2>HTML to native "pros and cons"</h2>
+        <div class="byline">
+          <div class="classy">
+            It's html code
+          </div>
+        </div>
+        <div class="byline">
+          <div class="classy">
+            Needs different  <br /> 
+            template for any framework
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>
+          Angular 2 <br />
+          can do a step forward
+        </h2>
+        <p>One template implementation for all platforms?</p>
         <!-- 
         How?
+        [gif about step forward]
         -->
       </div>
     </section>
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h2>Angular 2 renderers</h2>
+        <h2>Angular 2 Renderers</h2>
+        <!-- 
+        Angular 2 has build in multi-rendering capabilities.
+
+        [gif about someone painting]
+        -->
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h2>Angular 2 Renderers</h2>
         <div class="byline">
           <div class="classy">
             web (JS and Dart)
@@ -74,12 +125,18 @@
             server
           </div>
         </div>
-        <!-- 
-        Angular 2 has build in multy rendering capabilities,
-        we already saw some of them on the web, by rendering
-        in ES5 and Dart.
-        The server renderer is used for server-side pre-compilation, 
+        <!--
+        We have already seen Angular render an app in web by operating
+        for js and dart platforms.
+
+        Also the server renderer is used for server-side pre-compilation, 
         and for the Angular2 compile build-step.
+        
+        (the build step is the step would compile the ng2 app ahead of time,
+        so that the application size it's smaller and load faster)
+
+        (the pre compilation it's the same thing of build-step with one
+        single app file)
         -->
       </div>
     </section>
@@ -90,9 +147,11 @@
         <img src="./assets/dom-render-diagram.png" />
         <!-- 
         So now, how this renders works?
-        All non-DOM code is handled on the Core level
-        Then instructions to the UI level are sent
+
+        All non-DOM code is handled on the Core level,
+        then instructions to the UI level are sent,
         so that the application can be rendered.
+
         This allows for a full separation between two
         areas (ui and core) and allow us web worker support.
         -->
@@ -121,12 +180,14 @@
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h2>Angular has a Renderer class</h2>
+        <h2>Angular 2 has a Renderer class</h2>
         <!--
         From workers we got all the 
         HTML and CSS code parsed at compile time (core level).
+
         The way Angular renders this instructions it's base from
         the Renderer class.
+
         So we can easy image the possibility to overide
         some of the Render methods, and make our custom render.
         -->
@@ -136,17 +197,20 @@
     <section data-bespoke-state="code">
       <div class="content">
         <h3>HTML and CSS code is parsed at compile time</h3>
-        <img src="./assets/html-code.png" style="width:90%; margin:0 auto;" />
+        <img src="./assets/html-code.png" 
+        style="width:90%; margin:0 auto;" />
       </div>
     </section>
 
     <section data-bespoke-state="code">
       <div class="content">
         <h3>This allows for full a understanding of the HTML code</h3>
-        <img src="./assets/instruction-code.png" style="width:90%; margin:0 auto;" />
+        <img src="./assets/instruction-code.png" 
+        style="width:90%; margin:0 auto;" />
         <!--
         Angular parses and programmatically builds the HTML
         tree via the renderer behind the scenes.
+
         This means that we can make any renderer understand this.
         -->
       </div>
@@ -155,46 +219,139 @@
     <section data-bespoke-state="full-text">
       <div class="content">
         <h3>Writing a custom renderer</h3>
-        <img src="./assets/renderer-code.png" style="width:90%; margin:0 auto;"/>
+        <img src="./assets/renderer-code.png" 
+        style="width:90%; margin:0 auto;"/>
       </div>
       <!--
-      now all the inner HTML is inserted and understood
+      Now all the inner HTML is inserted and understood
       -->
     </section>
 
     <section data-bespoke-state="full-text">
       <div class="content">
         <h2>Let's experiment!</h2>
-        <h3>Custom canvas experimentation (ReactCanvas)</h3>
+        <h3>Custom canvas experimentation</h3>
+        <!--
+        [gif about experimentation, maybe a science explode a flask]
+        -->
       </div>
     </section>
  
     <section data-bespoke-state="code">
       <div class="content">
         <h3>code example canvas</h3>
-        <pre ng-non-bindable><code class="language-javascript">
-</code></pre>
+        <img src="./assets/canvas-renderer.png" style="width:90%; margin:0 auto;"/>
+      </div>
+    </section>
+  
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code example html</h3>
+        <img src="./assets/canvas-html.png" style="width:90%; margin:0 auto;"/>
+      </div>
+    </section>
+
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code example output (this is a canvas element)</h3>
+        <img src="./assets/canvas-output.png" style="width:90%; margin:0 auto;"/>
+      </div>
+    </section>
+
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code example github</h3>
+        <h4>
+          <a target="_blank" rel="nofollow" href="https://github.com/matsko/angular2-canvas-renderer-expirement">matsko/angular2-canvas-renderer-expirement</a>
+        </h4>
+        <a href="https://github.com/matsko/angular2-canvas-renderer-expirement" 
+        target="_blank" rel="nofollow">
+          <img src="./assets/canvas-github.png" style="display:block; width:90%; opacity:0.9">
+        </a>
       </div>
     </section>
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h3>Multiple renderers per app</h3>
-        <ul>
-          <li>electron</li>
-          <li>native script</li>
-        </ul>
+        <h2>Multiple renderers per app</h2>
+
+        <div style="text-align:left">
+          <h4>Let's talk about</h4>
+          <ul>
+            <li>electron</li>
+            <li>web</li>
+          </ul>
+
+          <h4 style="margin-top:1em">Later on we can do...</h4>
+          <ul>
+            <li>other web view renderers (ionic)</li>
+            <li>native renderers (nativescript)</li>
+          </ul>
+        </div>
       </div>
       <!--
       what about multiple renderers per app
       - elctron: render the entire app in a webview on desktop
-      - native script: use a different template language to render a native mobile representation of the app
+      - native script: use a different template language to render a 
+                       native mobile representation of the app
+                       Notice how for NativeScript we still have different
+                       template code for the application for now. Since Angular2
+                       parses and understands HTML code this means that we can
+                       theoretically transform our web HTML code into NativeScript
+                       template code via the renderer.
       -->
+    </section>
+
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code example electron</h3>
+      <a href="https://github.com/matsko/angular2-multi-client" target="_blank" rel="nofollow">
+        <img src="./assets/app-electron.png" style="display:block; width:90%; opacity:0.9">
+      </a>
+      </div>
+    </section>
+
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code desktop</h3>
+        <img src="./assets/app-desktop-code.png" style="display:block; width:90%; opacity:0.9">
+      </div>
+    </section>
+
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code example web</h3>
+      <a href="https://github.com/matsko/angular2-multi-client" target="_blank" rel="nofollow">
+        <img src="./assets/app-chrome.png" style="display:block; width:90%; opacity:0.9">
+      </a>
+      </div>
+    </section>
+
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code web</h3>
+        <img src="./assets/app-web-code.png" style="display:block; width:90%; opacity:0.9">
+      </div>
+    </section>
+
+    <section data-bespoke-state="code">
+      <div class="content">
+        <h3>code example github</h3>
+        <h4><a target="_blank" rel="nofollow" href="https://github.com/matsko/angular2-multi-client">angular2-multi-client</a></h4>
+      <a href="https://github.com/matsko/angular2-multi-client" target="_blank" rel="nofollow">
+        <img src="./assets/app-github.png" style="display:block; width:90%; opacity:0.9">
+      </a>
+      </div>
     </section>
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h3>Work in progress</h3>
+        <h2>Work in progress</h2>
+        <div class="byline">
+          <div class="classy">
+            Angular2 Rendering is still in beta
+          </div>
+        </div>
         <!--
         These tools are still experimental.
         But here are some examples of this in action
@@ -202,41 +359,81 @@
       </div>
     </section>
 
-    <section data-bespoke-state="full-title">
+    <section data-bespoke-state="full-text">
       <div class="content">
-        <img src="img/plan.png" style="opacity:0.9">
+        <h3>Plan</h3>
+        <img src="img/plan-agenda-view.png" 
+        style="width:90%; margin:0 auto;">
+        <!--
+        This is plan. (show demo / show features).
+
+        Right now it is developed in Angular 1.x with ngUpgrade
+        Now we're migrating to Angular 2.0
+        Once things are more stable we intend to make it available
+        on web, desktop and mobile. Angular2 renderers will help
+        us make this happen.
+
+        A little bit what Plan is...
+        Plan is a bridge between your to-dos, meetings, projects, and work, 
+        it’s tough to keep track of everything easily. 
+        
+        It brings together everything that takes time in your day, and intelligently organizes them so that you can spend time on what matters most: actually doing what you love.
+        -->
       </div>
     </section>
 
     <section data-bespoke-state="full-text">
       <div class="content">
-        <h3>show plan</h3>
-        <ul>
-          <li>render in web</li>
-          <li>render in electron</li>
-        </ul>
-      </div>
-    </section>
-
-    <section data-bespoke-state="full-text">
-      <div class="content">
-        <h3>render a basic version in react native</h3>
-      </div>
-    </section>
-
-    <section data-bespoke-state="full-text">
-      <div class="content">
-        <h3>the API for rendering is constantly changing</h3>
+        <h3>Plan</h3>
+        <img src="img/plan-agenda-view.png" 
+        style="width:90%; margin:0 auto;">
+        <!--
+         Your tasks are connected to your calendar (you know, the place that stores what you are doing that day), which are both connected by your ‘Focus’ (projects, classes, categories, etc). Suddenly, you can see everything you want to do and everything you’re doing in one place, effortlessly organized, with meaningful insights that tell you exactly how you’re spending your time.
+        -->
       </div>
     </section>
 
     <section data-bespoke-state="full-text">
       <div class="content">
         <h3>Recap</h3>
+        <p>
+          Angular2 will include a more concrete API when stable is released.
+        </p>
+        <p>
+          More information will be provided when ready
+        </p>
+        <p>
+          Read Matias' Article at <strong>LINK</strong>
+        </p>
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>Links</h3>
+        <h4>Canvas Renderer Code</h4>
+        <a target="_blank" rel="nofollow" 
+        href="https://github.com/matsko/angular2-multi-client">angular2-multi-client</a>
+
+        <h4 style="margin-top:1em;">Angular Electron Demo Code</h4>
+        <a target="_blank" rel="nofollow" href="https://github.com/matsko/angular2-canvas-renderer-expirement">matsko/angular2-canvas-renderer-expirement</a>
+      </div>
+    </section>
+
+    <section data-bespoke-state="full-text">
+      <div class="content">
+        <h3>Special Thank Yous</h3>
         <ul>
-          <li>the end goal is to have plug/play for support for angular2 renderers</li>
-          <li>read this article to learn more … yearofmoo</li>
-          <li>use this github project to get started to … https://github.com/matsko/angular2-multi-client</li>
+          <li><span class="name">
+            Matias (@yearofmoo)</span> - slides, code, content
+          </li>
+          <li><span class="name">
+            Tobias Bosch</span> - he wrote the renderer
+          </li>
+          <li><span class="name">
+            Rob Wormald (@robwormald)</span> - angular electorn renderer
+          </li>
+          <li><span class="name">The Rest of the Angular Core Team</li>
         </ul>
       </div>
     </section>
